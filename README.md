@@ -7,9 +7,9 @@ Engineered with a decoupled client-server architecture, this dashboard processes
 ## 🚀 Key Features
 
 * **API-Driven Architecture:** Strict separation of concerns utilizing a React/Vite client UI and a Python/FastAPI backend server.
-* **ETL Processing:** Ingests, cleans, and transforms a large-scale synthetic corporate dataset (11,000+ records) using Pandas for high-performance filtering and aggregation.
+* **ETL Processing:** Ingests, cleans, and transforms a large-scale corporate dataset (11,000+ records) using Pandas for high-performance filtering and aggregation.
 * **Interactive Data Visualization:** Dynamic, responsive charting components built with Recharts to map Scope 1 Emissions against ESG performance metrics.
-* **Automated Analytical Insights:** Endpoint-driven automated analysis simulating AI-generated sector summaries based on calculated mathematical distributions.
+* **AI-Powered Executive Summaries:** Integration of a locally hosted Large Language Model (Ollama running Llama 3) to generate context-aware executive summaries from dynamically filtered ESG datasets, enabling privacy-preserving AI analysis without reliance on external APIs.
 * **Secure API Configuration:** Implemented strict Cross-Origin Resource Sharing (CORS) middleware and Pydantic data validation to ensure secure state management.
 
 ## 🛠️ Technical Stack
@@ -26,20 +26,22 @@ Engineered with a decoupled client-server architecture, this dashboard processes
 * Uvicorn (ASGI web server)
 * Pandas (Data manipulation & aggregation)
 * Pydantic (Data validation)
+* Ollama / Llama 3 (Local LLM Inference)
 
 ## 💻 Local Development Setup
 
-**Prerequisites:** Node.js and Python 3 installed. The application requires concurrent backend and frontend server processes.
+**Prerequisites:** Node.js, Python 3, and Ollama installed. The application requires concurrent backend and frontend server processes.
 
 ### 1. Clone the Repository
 
     git clone https://github.com/your-username/esg-ai-dashboard.git
     cd esg-ai-dashboard
 
-### 2. Initialize the Backend Server (Terminal 1)
+### 2. Initialize the Local AI & Backend Server (Terminal 1)
 
-Navigate to the backend directory, install dependencies, and boot the ASGI server:
+Ensure Ollama is running locally, then navigate to the backend directory, install dependencies, and boot the ASGI server:
 
+    ollama run llama3
     cd backend
     pip install fastapi uvicorn pandas pydantic
     uvicorn main:app --reload
