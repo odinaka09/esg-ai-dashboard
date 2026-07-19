@@ -7,10 +7,10 @@ Engineered with a decoupled client-server architecture, this dashboard processes
 ## 🚀 Key Features
 
 * **API-Driven Architecture:** Strict separation of concerns utilizing a React/Vite client UI and a Python/FastAPI backend server.
-* **ETL Processing:** Ingests, cleans, and transforms a large-scale corporate dataset (11,000+ records) using Pandas for high-performance filtering and aggregation.
+* **ETL Pipeline:** Extracts, transforms, and loads over 11,000 ESG records using Pandas, producing optimized datasets for high-performance filtering, aggregation, and REST API delivery.
 * **Interactive Data Visualization:** Dynamic, responsive charting components built with Recharts to map Scope 1 Emissions against ESG performance metrics.
-* **AI-Powered Executive Summaries:** Integration of a locally hosted Large Language Model (Ollama running Llama 3) to generate context-aware executive summaries from dynamically filtered ESG datasets, enabling privacy-preserving AI analysis without reliance on external APIs.
-* **Secure API Configuration:** Implemented strict Cross-Origin Resource Sharing (CORS) middleware and Pydantic data validation to ensure secure state management.
+* **AI-Powered Executive Summaries:** Integrates a locally hosted Llama 3 model through Ollama to generate context-aware executive summaries from dynamically filtered ESG data, enabling privacy-preserving inference without external API dependencies.
+* **Secure API Configuration:** Implements CORS middleware and Pydantic request/response models for validated data exchange between the backend and frontend.
 
 ## 🛠️ Technical Stack
 
@@ -24,7 +24,7 @@ Engineered with a decoupled client-server architecture, this dashboard processes
 * Python 3
 * FastAPI (RESTful API framework)
 * Uvicorn (ASGI web server)
-* Pandas (Data manipulation & aggregation)
+* Pandas (ETL, data transformation, aggregation)
 * Pydantic (Data validation)
 * Ollama / Llama 3 (Local LLM Inference)
 
@@ -43,7 +43,7 @@ Ensure Ollama is running locally, then navigate to the backend directory, instal
 
     ollama run llama3
     cd backend
-    pip install fastapi uvicorn pandas pydantic
+    pip install -r requirements.txt
     uvicorn main:app --reload
 
 *The backend API will initialize at http://127.0.0.1:8000*
@@ -59,4 +59,4 @@ Open a new terminal window, navigate to the frontend directory, install node mod
 *The React client will initialize at http://localhost:5173*
 
 ## 📊 Data Provenance
-Data processing utilizes the ESG & Financial Performance Dataset via Kaggle. The backend dynamically filters, maps, and structures this data before serving JSON responses to the client.
+Uses the ESG & Financial Performance dataset from Kaggle. The backend performs ETL processing, dynamic filtering, aggregation, and JSON serialization before exposing the processed data through REST API endpoints.
