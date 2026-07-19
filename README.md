@@ -4,6 +4,11 @@ A full-stack business intelligence application designed to analyze and visualize
 
 Engineered with a decoupled client-server architecture, this dashboard processes high-volume corporate datasets to deliver real-time sustainability insights and interactive data visualization.
 
+<img width="1920" height="1039" alt="image" src="https://github.com/user-attachments/assets/46b27856-a039-4420-b147-c84162d781cc" />
+<img width="1920" height="426" alt="Screenshot 2026-07-19 162143" src="https://github.com/user-attachments/assets/8ff84be8-a07e-4828-95fa-a6319f37ae22" />
+
+
+
 ## 🚀 Key Features
 
 * **API-Driven Architecture:** Strict separation of concerns utilizing a React/Vite client UI and a Python/FastAPI backend server.
